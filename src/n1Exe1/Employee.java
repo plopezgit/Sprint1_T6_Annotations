@@ -6,7 +6,6 @@ public class Employee {
 	private String employeeSurname;
 	private int employeePriceByHour;
 	
-	
 	public Employee(String employeeName, String employeeSurname, int employeePriceByHour) {
 		this.employeeName = employeeName;
 		this.employeeSurname = employeeSurname;
@@ -42,7 +41,12 @@ public class Employee {
 	public int employeeSalaryCalculation (int employeeHoursWorked) {
 		return employeePriceByHour * employeeHoursWorked;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "[employeeName=" + employeeName + ", employeeSurname=" + employeeSurname
+				+ ", employeePriceByHour=" + employeePriceByHour;
+	}
 	
 	/*
 	 * Crea una jerarquía de objetos con tres clases: 
