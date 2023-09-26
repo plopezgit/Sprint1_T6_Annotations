@@ -4,9 +4,9 @@ public class Employee_Online extends Employee {
 	
 	private final int EMPLOYEE_INTERNET_INVOICE;
 	
-	public Employee_Online(String employeeName, String employeeSurname, int employeePriceByHour, int employeeGasConsume) {
+	public Employee_Online(String employeeName, String employeeSurname, int employeePriceByHour) {
 		super(employeeName, employeeSurname, employeePriceByHour);
-		EMPLOYEE_INTERNET_INVOICE = 35;
+		EMPLOYEE_INTERNET_INVOICE = 45;
 
 	}
 

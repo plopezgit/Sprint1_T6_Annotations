@@ -2,7 +2,7 @@ package n1Exe1;
 
 public class Employee_InOffice extends Employee {
 
-	private static int employeeGasConsume = 30;
+	private static int employeeGasConsume = 90;
 	
 	public Employee_InOffice(String employeeName, String employeeSurname, int employeePriceByHour) {
 		super(employeeName, employeeSurname, employeePriceByHour);
