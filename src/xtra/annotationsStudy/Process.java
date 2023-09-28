@@ -1,7 +1,7 @@
 package xtra.annotationsStudy;
 
-@ProcessInstanceFlag
-public class Process <I, O> {
+//@ProcessInstanceFlag
+public class Process <I , O> {
 	
 	private String processTitle;
 	private I processInput;
