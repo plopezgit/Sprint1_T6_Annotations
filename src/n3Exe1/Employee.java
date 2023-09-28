@@ -1,4 +1,4 @@
-package n2Exe1;
+package n3Exe1;
 
 import java.io.Serializable;
 
@@ -46,6 +46,21 @@ public class Employee implements Serializable{
 		return employeePriceByHour * employeeHoursWorked;
 	}
 	
+	//Alt method target
+	//@ObjectToJsonSerial (dir="json/employee.json")
+	/*public void serializeDirectoryToFile() {
+		String data = null;
+		ObjectToJsonSerial annotation = employee1.getClass().getAnnotation(ObjectToJsonSerial.class);
+		try (FileOutputStream fileOutputStream = new FileOutputStream("json/employee");
+				ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+			data = mapper.writeValueAsString(this);
+			System.out.println(data);
+			objectOutputStream.writeBytes(data);
+		} catch (IOException e) {
+			System.err.println(FILE_NOT_FOUND_MSG);
+		}
+	}*/
+
 	@Override
 	public String toString() {
 		return "[employeeName=" + employeeName + ", employeeSurname=" + employeeSurname

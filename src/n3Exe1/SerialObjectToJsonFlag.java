@@ -1,4 +1,4 @@
-package n2Exe1;
+package n3Exe1;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,14 +6,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
+//@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SerialObjectToJsonFlag {
 	public String dir() default "json/employee.json";
 }
 
 /*
- * Crea una anotación personalizada que debe 
- * permitir serializar un objeto Java en un archivo JSON. 
- * La anotación debe recibir el directorio 
- * donde se colocará el archivo resultante.
+ * Añade la posibilidad de que la anotación creada en el nivel anterior 
+ * sea registrada por la Virtual Machine en tiempo de ejecución. 
+ * Demuestra que se ejecuta la lectura de la anotación utilizando Java Reflection.
  */

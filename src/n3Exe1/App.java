@@ -1,4 +1,4 @@
-package n2Exe1;
+package n3Exe1;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ public class App {
 
 	public static void main(String[] args) {
 
-		Employee employee1 = new Employee("Tropical", "Fish", 100);
+		Employee employee1 = new Employee("Frankie", "Hill", 100);
 		
 		if (employee1.getClass().isAnnotationPresent(SerialObjectToJsonFlag.class)) {
 			String data = null;
@@ -21,12 +21,12 @@ public class App {
 				data = mapper.writeValueAsString(employee1);
 				System.out.println(data);
 				objectOutputStream.writeBytes(data);
-				System.out.println(employee1.getEmployeeName() + " object has been serialized in " + annotation.dir());
+				System.out.println(employee1.getEmployeeName() + " object has been serialized in: " + annotation.dir());
 			} catch (IOException e) {
 				System.err.println("File not found");
 			}
 		} else {
-			System.out.println(employee1.getEmployeeName() + " has not been serialized.");
+			System.out.println(employee1.getEmployeeName() + "has not been serialized.");
 		}
 	}
 	
