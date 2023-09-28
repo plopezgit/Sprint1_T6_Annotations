@@ -11,6 +11,7 @@ public class App {
 		Board board = new Board(30, 90, "wood");
 		Field[] boardFields = board.getClass().getDeclaredFields();
 		
+		System.out.println(Board.getHeader());
 		System.out.println(board.getMaterial());
 		
 		for (Field f: boardFields) {
@@ -19,9 +20,7 @@ public class App {
 				f.setAccessible(true);
 				try {
 					f.set(board, "vinil");
-				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
+				} catch (IllegalArgumentException | IllegalAccessException e) {
 					e.printStackTrace();
 				}
 			}
@@ -36,16 +35,36 @@ public class App {
 			if (m.getName().equals("getMaterial")) {
 				try {
 					System.out.println(m.invoke(board));
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
-				} catch (InvocationTargetException e) {
+				} catch (IllegalAccessException | IllegalArgumentException 
+						| InvocationTargetException e) {
 					e.printStackTrace();
 				}
 				//System.out.println(board.getMaterial());
 			}
+			
+			if (m.getName().equals("writeHelloOnBoard")) {
+				try {
+					m.setAccessible(true);
+					m.invoke(board);
+				} catch (IllegalAccessException | IllegalArgumentException 
+						| InvocationTargetException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (m.getName().equals("cleanAny")) { 
+				try {
+					m.setAccessible(true);
+					m.invoke(null);
+					
+				} catch (IllegalAccessException | IllegalArgumentException 
+						| InvocationTargetException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+		
+		System.out.print(Board.getHeader());
 	}
 
 }
